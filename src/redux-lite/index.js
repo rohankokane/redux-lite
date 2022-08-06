@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const createStore = (reducer) => {
-  let state;
+const createStore = (reducer, initialState) => {
+  let state = initialState;
   let listeners = [];
 
   const getState = () => state;

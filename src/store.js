@@ -1,4 +1,4 @@
-import { createStore } from "./redux-lite";
+import { combineReducers, createStore } from "./redux-lite";
 
 const counterReducer = (state = { count: 0, dozen: 0 }, action) => {
   switch (action.type) {
@@ -21,4 +21,8 @@ const counterReducer = (state = { count: 0, dozen: 0 }, action) => {
   }
 };
 
-export const store = createStore(counterReducer);
+const rootReducer = combineReducers({
+  counter: counterReducer
+});
+
+export const store = createStore(rootReducer);
